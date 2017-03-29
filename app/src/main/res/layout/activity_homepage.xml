@@ -11,7 +11,9 @@
         android:id="@+id/button"
         android:layout_width="139dp"
         android:layout_height="48dp"
+        android:onClick="openACCMeter"
         android:text="Accelerometer"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="129dp"
         tools:layout_editor_absoluteY="129dp" />
 
@@ -19,7 +21,9 @@
         android:id="@+id/button2"
         android:layout_width="88dp"
         android:layout_height="48dp"
+        android:onClick="openCompass"
         android:text="Compass"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="284dp" />
 
