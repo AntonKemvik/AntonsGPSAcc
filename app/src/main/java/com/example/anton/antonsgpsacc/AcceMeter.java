@@ -22,7 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-
+import android.os.Vibrator;
 /**
  * This is an example of using the accelerometer to integrate the device's
  * acceleration to a position using the Verlet method. This is illustrated with
@@ -67,7 +67,7 @@ public class AcceMeter extends Activity {
 
         // instantiate our simulation view and set it as the activity's content
         mSimulationView = new SimulationView(this);
-        mSimulationView.setBackgroundResource(R.drawable.wood);
+        mSimulationView.setBackgroundResource(R.drawable.grass);
         setContentView(mSimulationView);
     }
 
@@ -176,16 +176,24 @@ public class AcceMeter extends Activity {
                 final float x = mPosX;
                 final float y = mPosY;
                 if (x > xmax) {
+                    Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(50);
                     mPosX = xmax;
                     mVelX = 0;
                 } else if (x < -xmax) {
+                    Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(50);
                     mPosX = -xmax;
                     mVelX = 0;
                 }
                 if (y > ymax) {
+                    Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(50);
                     mPosY = ymax;
                     mVelY = 0;
                 } else if (y < -ymax) {
+                    Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(50);
                     mPosY = -ymax;
                     mVelY = 0;
                 }
@@ -196,7 +204,7 @@ public class AcceMeter extends Activity {
          * A particle system is just a collection of particles
          */
         class ParticleSystem {
-            static final int NUM_PARTICLES = 5;
+            static final int NUM_PARTICLES = 2;
             private Particle mBalls[] = new Particle[NUM_PARTICLES];
 
             ParticleSystem() {
